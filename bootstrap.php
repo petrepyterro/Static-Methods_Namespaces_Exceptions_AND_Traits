@@ -16,3 +16,13 @@ require_once __DIR__.'/lib/Service/PdoShipStorage.php';
 require_once __DIR__.'/lib/Service/JsonFileShipStorage.php';
 require_once __DIR__.'/lib/Service/ShipLoader.php';
 require_once __DIR__.'/lib/Model/BattleResult.php';
+
+spl_autoload_register(function($className){
+  if ($className == 'Battle\BattleManager'){
+    require __DIR__ . '/lib/Service/BattleManager.php';
+    
+    return;
+    
+    //we don't support this class
+  }
+});

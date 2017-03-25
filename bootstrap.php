@@ -18,11 +18,9 @@ require_once __DIR__.'/lib/Service/ShipLoader.php';
 require_once __DIR__.'/lib/Model/BattleResult.php';
 
 spl_autoload_register(function($className){
-  if ($className == 'Battle\BattleManager'){
-    require __DIR__ . '/lib/Service/BattleManager.php';
-    
-    return;
-    
-    //we don't support this class
+  $path = __DIR__.'/lib/'.str_replace('\\', '/', $className).'.php';
+  
+  if(file_exists($path)){
+    require $path;
   }
 });

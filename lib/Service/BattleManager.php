@@ -12,6 +12,7 @@ class BattleManager {
 
     $ship1UsedJediPowers = false;
     $ship2UsedJediPowers = false;
+    $i = 0;
     while ($ship1Health > 0 && $ship2Health > 0) {
       // first, see if we have a rare Jedi hero event!
       if ($battleType != 'no_jedi' && $this->didJediDestroyShipUsingTheForce($ship1)) {
@@ -28,8 +29,17 @@ class BattleManager {
       }
 
       // now battle them normally
-      $ship1Health = $ship1Health - ($ship2->getWeaponPower() * $ship2Quantity);
-      $ship2Health = $ship2Health - ($ship1->getWeaponPower() * $ship1Quantity);
+      if ($battleType != 'only_jedi'){
+        $ship1Health = $ship1Health - ($ship2->getWeaponPower() * $ship2Quantity);
+        $ship2Health = $ship2Health - ($ship1->getWeaponPower() * $ship1Quantity);
+      }
+      
+      if ($i=100){
+        $ship1Health = 0;
+        $ship2Health = 0;
+      }
+      
+      $i++;
     }
 
     // update the strengths on the ships, so we can show this

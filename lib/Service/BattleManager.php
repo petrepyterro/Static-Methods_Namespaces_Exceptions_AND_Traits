@@ -1,6 +1,10 @@
 <?php
 
 class BattleManager {
+  const TYPE_NORMAL = 'normal';
+  const TYPE_NO_JEDI = 'no_jedi';
+  const TYPE_ONLY_JEDI = 'only_jedi';
+
   /**
    * Our complex fighting algorithm!
    *

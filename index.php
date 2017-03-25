@@ -10,7 +10,7 @@ $brokenShip = new BrokenShip('Just a hunk of metal');
 $ships[] = $brokenShip;
 
 $battleManager = $container->getBattleManager();
-$batleTypes = $battleManager->getAllBattleTypesWithDescriptions();
+$batleTypes = $battleManager::getAllBattleTypesWithDescriptions();
 
 $errorMessage = '';
 if (isset($_GET['error'])) {

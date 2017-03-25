@@ -71,7 +71,7 @@ class BattleManager {
     return new BattleResult($usedJediPowers, $winningShip, $losingShip);
   }
  
-  public function getAllBattleTypesWithDescriptions(){
+  public static function getAllBattleTypesWithDescriptions(){
     return array(
       self::TYPE_NORMAL => 'Normal',
       self::TYPE_NO_JEDI => 'No Jedi Powers',

@@ -6,7 +6,7 @@ class BattleManager {
    *
    * @return BattleResult
    */
-  public function battle(AbstractShip $ship1, $ship1Quantity, AbstractShip $ship2, $ship2Quantity){
+  public function battle(AbstractShip $ship1, $ship1Quantity, AbstractShip $ship2, $ship2Quantity, $battleType){
     $ship1Health = $ship1->getStrength() * $ship1Quantity;
     $ship2Health = $ship2->getStrength() * $ship2Quantity;
 

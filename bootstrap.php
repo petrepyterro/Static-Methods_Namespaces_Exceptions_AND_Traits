@@ -1,9 +1,9 @@
 <?php
 
 $configuration = array(
-  'db_dsn'  => 'mysql:host=localhost;dbname=oo_battle',
+  'db_dsn'  => 'mysql:host=localhost;dbname=Services_Dependency_Injection_AND_Containers',
   'db_user' => 'root',
-  'db_pass' => null,
+  'db_pass' => 'mysql',
 );
 
 

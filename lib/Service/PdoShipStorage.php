@@ -9,6 +9,7 @@ class PdoShipStorage implements ShipStorageInterface {
   }
 
   public function fetchAllShipsData(){
+    throw new \InvalidArgumentException('something else went wrong');
     $statement = $this->pdo->prepare('SELECT * FROM FOOOD');
     $statement->execute();
 

@@ -1,4 +1,5 @@
 <?php
+namespace Service;
 
 class Container {
   private $configuration;
@@ -20,13 +21,13 @@ class Container {
    */
   public function getPDO(){
     if ($this->pdo === null) {
-      $this->pdo = new PDO(
+      $this->pdo = new \PDO(
         $this->configuration['db_dsn'],
         $this->configuration['db_user'],
         $this->configuration['db_pass']
       );
 
-      $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 
     return $this->pdo;
@@ -45,8 +46,8 @@ class Container {
 
   public function getShipStorage(){
     if ($this->shipStorage === null) {
-      //$this->shipStorage = new PdoShipStorage($this->getPDO());
-      $this->shipStorage = new JsonFileShipStorage(__DIR__.'/../../resources/ships.json');
+      $this->shipStorage = new PdoShipStorage($this->getPDO());
+      //$this->shipStorage = new JsonFileShipStorage(__DIR__.'/../../resources/ships.json');
     }
 
     return $this->shipStorage;

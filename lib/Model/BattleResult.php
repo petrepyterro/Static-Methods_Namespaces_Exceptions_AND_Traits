@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 
-class BattleResult {
+class BattleResult implements \ArrayAccess{
   private $usedJediPowers;
   private $winningShip;
   private $losingShip;
@@ -45,5 +45,21 @@ class BattleResult {
    */
   public function isThereAWinner(){
     return $this->getWinningShip() !== null;
+  }
+  
+  public function offsetExists($offset) {
+    
+  }
+  
+  public function offsetGet($offset) {
+    
+  }
+  
+  public function offsetSet($offset, $value) {
+    
+  }
+  
+  public function offsetUnset($offset) {
+    
   }
 }

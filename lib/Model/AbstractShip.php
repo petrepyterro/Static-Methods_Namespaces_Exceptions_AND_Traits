@@ -1,4 +1,5 @@
 <?php
+namespace Model;
 
 abstract class AbstractShip {
   private $id;
@@ -105,5 +106,13 @@ abstract class AbstractShip {
    */
   public function setId($id){
     $this->id = $id;
+  }
+  
+  public function __toString() {
+    return $this->getName();
+  }
+  
+  public function __get($propertyName){
+    return $this->$propertyName;
   }
 }

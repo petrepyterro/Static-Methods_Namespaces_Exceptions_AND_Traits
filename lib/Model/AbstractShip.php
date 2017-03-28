@@ -111,4 +111,8 @@ abstract class AbstractShip {
   public function __toString() {
     return $this->getName();
   }
+  
+  public function __get($propertyName){
+    var_dump($propertyName);die;
+  }
 }

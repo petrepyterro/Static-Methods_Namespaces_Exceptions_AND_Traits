@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 
-class ShipCollection implements \ArrayAccess {
+class ShipCollection implements \ArrayAccess, \IteratorAggregate {
   /**
    *
    * @var AbstractShip[]
@@ -26,6 +26,10 @@ class ShipCollection implements \ArrayAccess {
   
   public function offsetUnset($offset) {
     unset($this->ships[$offset]);  
+  }
+  
+  public function getIterator() {
+    return new \ArrayIterator($this->ships);  
   }
 }
 

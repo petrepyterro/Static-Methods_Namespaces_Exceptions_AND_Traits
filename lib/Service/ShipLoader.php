@@ -24,7 +24,9 @@ class ShipLoader {
     foreach ($shipsData as $shipData) {
       $ships[] = $this->createShipFromData($shipData);
     }
-
+    // Boba Fett's ship
+    $ships[] = new \Model\BountyHunterShip('Slave I');
+    
     return new ShipCollection($ships);
   }
 

@@ -14,7 +14,7 @@ class ShipLoader {
   }
 
   /**
-   * @return AbstractShip[]
+   * @return ShipCollection
    */
   public function getShips() {
     $ships = array();

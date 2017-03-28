@@ -113,6 +113,6 @@ abstract class AbstractShip {
   }
   
   public function __get($propertyName){
-    var_dump($propertyName);die;
+    return $this->$propertyName;
   }
 }

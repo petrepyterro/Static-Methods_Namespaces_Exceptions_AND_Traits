@@ -107,4 +107,8 @@ abstract class AbstractShip {
   public function setId($id){
     $this->id = $id;
   }
+  
+  public function __toString() {
+    return $this->getName();
+  }
 }
